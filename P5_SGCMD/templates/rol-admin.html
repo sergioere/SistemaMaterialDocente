@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %} Sistema de Gestión del Control del Material Docente{% endblock %}
+
+{% block account %}Administrador{% endblock %}
+
+
+{% block rol-admin %}
+ <li>
+                        <a href="{% url 'usuario' %}" class="nav-link px-3 gest-usuarios">
+                            <span class="me-2"><i class="bi bi-book"></i></span>
+                            <span>Gestión de usuarios</span>
+                        </a>
+                    </li>
+    <li>
+                    <a href="{% url 'ayuda' %}" class="nav-link px-3 ayuda">
+                        <span class="me-2"><i class="bi bi-question-square"></i></span>
+                        <span>Ayuda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'contactos' %}" class="nav-link px-3 contactos">
+                        <span class="me-2"><i class="bi bi-person-rolodex"></i></span>
+                        <span>Contactos</span>
+                    </a>
+                </li>
+
+{% endblock %}
+{% block body %}
+    <div class="container display-6">
+        Bienvenido Administrador !
+    </div>
+{% endblock %}

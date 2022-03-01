@@ -1,0 +1,50 @@
+{% block rol-vice %}
+<li>
+        <a href="{% url 'material' %}" class="nav-link px-3 gest-material-docente">
+            <span class="me-2"><i class="bi bi-book"></i></span>
+            <span>Gestión del material docente</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'modelo' %}" class="nav-link px-3 gest-modelo-solicitud">
+            <span class="me-2"><i class="bi bi-book"></i></span>
+            <span>Gestión del modelo de solicitud de materiales</span>
+        </a>
+    </li>
+    <li>
+        <a href="/entrega/" class="nav-link px-3 gest-entrega-material">
+            <span class="me-2"><i class="bi bi-book"></i></span>
+            <span>Gestión de la entrega de material docente</span>
+        </a>
+    </li>
+
+
+    <li class="my-1">
+        <hr class="dropdown-divider bg-light"/>
+    </li>
+
+{% endblock %}
+{% block rol-admin %}
+<li>
+        <a href="{% url 'usuario' %}" class="nav-link px-3 gest-usuarios">
+            <span class="me-2"><i class="bi bi-book"></i></span>
+            <span>Gestión de usuarios</span>
+        </a>
+    </li>
+{% endblock %}
+    <li class="my-1">
+        <hr class="dropdown-divider bg-light"/>
+    </li>
+
+    <li>
+        <a href="{% url 'ayuda' %}" class="nav-link px-3 ayuda">
+            <span class="me-2"><i class="bi bi-question-square"></i></span>
+            <span>Ayuda</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'contactos' %}" class="nav-link px-3 contactos">
+            <span class="me-2"><i class="bi bi-person-rolodex"></i></span>
+            <span>Contactos</span>
+        </a>
+    </li>

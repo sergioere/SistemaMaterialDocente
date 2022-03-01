@@ -1,0 +1,42 @@
+{% extends "gestMateriales/gest-material-docente.html" %}
+
+ {% block content %}
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" role="dialog" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Eliminar material
+                                                        docente</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+
+                                                <form action="/deleteMaterialModal/{{ m.nombre }}/" method="post">
+                                                    {% csrf_token %}
+                                                <div class="modal-body bg-light text-danger">
+
+                                                    <i class="bi bi-exclamation-triangle"></i>
+                                                   ¿Está seguro que desea eliminar el material docente?
+                                                    {{ m.nombre}}
+                                                </div>
+                                                <div class="modal-footer bg-light btn-group">
+
+                                                    <button type="submit" class="btn btn-primary m-1">
+                                                        Aceptar
+                                                    </button>
+                                                    <button type="button" class="btn btn-secondary m-1"
+                                                        data-bs-dismiss="modal">Cancelar</button>
+
+                                                </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+{% endblock %}

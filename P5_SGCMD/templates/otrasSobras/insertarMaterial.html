@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertar Material Docente</title>
+</head>
+<body>
+<form action="/insertarMaterial/" method="post" autocomplete="off" id="form-material-docente-insert" class="">
+                                        {% csrf_token %}
+                                        <div class="form-group mt-2">
+                                            <label class="form-label" for="nombre">Nombre</label>
+                                            <input id="nombre" name="nombre" type="text" class="form-control"
+                                                placeholder="ej: libreta, lápiz, ...">
+
+                                        </div>
+
+                                        <div class="form-group mt-2">
+                                            <label class="form-label" for="cantidad">Cantidad</label>
+                                            <input id="cantidad" name="cantidad" class="form-control"
+                                                placeholder="ej: 5" type="number">
+
+                                        </div>
+
+
+                                        <div class="form-group mt-2">
+
+                                            <label for="categoria" class="form-label">Categoría</label>
+                                            <select id="categoria" name="categoria" class="form-select" >
+                                                <option selected disabled value="">Seleccione...</option>
+                                                <option>Profesor</option>
+                                                <option>Estudiante</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="modal-footer btn-group m-2">
+                                            <button type="submit" class="btn btn-primary m-1">Aceptar</button>
+                                            <button type="button" class="btn btn-secondary m-1"
+                                                data-bs-dismiss="modal">Cancelar</button>
+
+                                        </div>
+
+                                    </form>
+
+</body>
+</html>

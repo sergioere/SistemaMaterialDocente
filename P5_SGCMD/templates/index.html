@@ -1,0 +1,9 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %} Sistema de Gestión del Control del Material Docente{% endblock %}
+
+{% block body %}
+<div class="container display-6" >
+Bienvenido {{ username }}{% block rol %} {% endblock %}
+</div>
+{% endblock %}

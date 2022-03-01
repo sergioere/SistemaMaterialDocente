@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href='{% static "img/tab-logo.ico" %}' type="image/x-icon">
+
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'/>
+    <link rel="stylesheet" href='{% static "css/font/bootstrap-icons.css" %}'/>
+    <link rel="stylesheet" href='{% static "css/style.css" %}'/>
+    <link rel="stylesheet" href='{% static "css/login-style.css" %}' />
+
+    <!-- <title>Sistema de Gestión del Control del Material Docente</title> -->
+    <title>{% block title %}login {% endblock %}</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-opacity-75">
+    <div class="container-fluid justify-content-center justify-content-md-start">
+      <a class="navbar-brand" href="#">SGCMD</a>
+
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8  col-lg-6  col-xl-6  mt-5 pt-3">
+
+        <form id="form-login"  method="POST" class="card card-body bg-dark bg-opacity-75 shadow" action="">
+            {% csrf_token %}
+
+            <img width="80px" class="rounded-3 mx-auto mb-1" src='{% static "img/logo.jpg" %}'>
+          <h6 class="h6 mt-auto mb-3 text-center text-light">
+            Sistema de Gestión del Control del Material Docente
+          </h6>
+
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    Usuario y contraseña incorrectos.
+                </div>
+            {% endif %}
+
+          <div class="mb-3">
+            <input id="user" name="{{ form.username.name }}" type="text" class="form-control" placeholder="&#x1f464; Usuario" />
+          </div>
+
+          <div class="mb-3 ">
+            <input id="password" type="password" name="{{ form.password.name }}" class="form-control"
+              placeholder="&#x1f510; Contraseña" />
+          </div>
+
+          <div class="mb-3 d-grid">
+
+            <button id="validar" class="btn btn-primary " type="submit">
+                <i class="bi bi-box-arrow-in-right" ></i> Ingresar
+            </button>
+          <!-- &#x21aa;&#xfe0f; -->
+          </div>
+
+          <hr class="bg-light" />
+          <p class="small text-center text-light">
+            Universidad de las Ciencias Informáticas <br>
+            Todos los derechos reservados &#xa9;&#xfe0f;
+          </p>
+
+         
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript" defer src='{% static "js/bootstrap.bundle.min.js" %}'></script>
+<script type="text/javascript" defer src='{% static "js/jquery.min.js" %}'></script>
+<script type="text/javascript" defer src='{% static "js/jquery.validate.min.js" %}'></script>
+<script type="text/javascript" defer src='{% static "js/app.js" %}'></script>
+</html>
